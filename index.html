@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDV 2025 Assignment 2: Data Visualization Critiques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .viz-section {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .viz-section img {
+            width: 45%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .viz-section img:hover {
+            transform: scale(1.05);
+        }
+        .text-content {
+            padding-left: 20px;
+            width: 55%;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal img {
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin: 5% auto;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualisation Critiques</h1>
+    <div class="container">
+        
+        <!-- Europa League Visualization -->
+        <div class="viz-section">
+            <img src="https://pbs.twimg.com/media/Gio9PTCWkAAEoLS?format=jpg&name=medium" alt="Europa League Chart" onclick="openModal(this)">
+            <div class="text-content">
+                <h2>Europa League "Actual vs Expected" Chart</h2>
+                <p><strong>Description:</strong> A scatter-style visualization comparing actual vs. expected performance of football teams in the UEFA Europa League.</p>
+                <p><strong>Source:</strong> <a href="https://x.com/Thrylos7Intl/status/1885386730192462305/photo/1" target="_blank">Tweet Source</a></p>
+                <p><strong>Data Issues:</strong>
+                    <ul>
+                        <li><b>No explanation of what "expected" rankings mean.</b></li>
+                        <p>The expected rankings are calculated through simulated match results, based on expected goals (xG) and expected goals against (xGA). These simulations determine the likely outcomes of matches, which then translate into expected points and rankings. However, the visualization provides no context or explanation for how these expected rankings were derived, leaving viewers to guess whether they are based on betting odds, statistical models, or expert opinions. </p>
+                        <li><b>No numerical scale or ranking values.</b></li>
+                        <p>While the chart visually places teams on either side of the central ranking column, it lacks a numerical scale that indicates actual and expected point differences. Without values, viewers cannot determine whether a team underperformed by 1 point or 10 points. Furthermore, the maximum possible points is 24, but this crucial detail is not provided anywhere on the visualization, making it unclear how far teams deviated from expectations.</p>
+                        <li><b>Logos instead of names make identification difficult.</b></li>
+                        <p>Rather than displaying team names, the visualization uses team logos, which reduces readability—especially for viewers unfamiliar with all clubs. Some logos share similar colors or are difficult to distinguish, making quick comparisons unnecessarily challenging. A simple label with team names next to each logo would significantly improve clarity.</p>
+                    </ul>
+                </p>
+                <p><strong>Idiom Issues:</strong>
+                    <ul>
+                        <li><b>Poor choice of visualization type.</b></li>
+                        <p>The scatter-style layout fails to show ranking differences effectively. Since teams are placed at varying distances from the ranking column, it is difficult to compare performance deviations at a glance. A dual-bar chart or ranked table with point differences would be far more intuitive and informative.</p>
+                        <li><b>Random positioning of teams disrupts ranking comparison.</b></li>
+                        <p>There is no clear system governing how far left or right each team is placed. Some teams that underperformed slightly are far from the center, while others with a greater performance gap are positioned closer. This lack of consistency misrepresents ranking deviations and makes the data feel arbitrarily arranged.</p>
+                        <li><b>Red background overwhelms readability.</b></li>
+                        <p>The intense red background dominates the visualization, making it harder to focus on ranking differences. The contrast between team logos and the background is not optimal, reducing clarity further. A neutral or subdued background would improve readability.</p>
+                    </ul>
+                </p>
+                <p><strong>Suggestions for Improvement:</strong>
+                    <ul>
+                        <li>Use a dual-bar chart for direct comparison.</li>
+                        <li>Provide ranking numbers & data sources.</li>
+                        <li>Replace logos with readable team names.</li>
+                        <li>Use a neutral background for better readability.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        
+        <!-- South America Forest Cover Map -->
+        <div class="viz-section">
+            <img src="https://pbs.twimg.com/media/GKqAIQgW8AARoyQ?format=jpg&name=4096x4096" alt="South America Forest Cover Map" onclick="openModal(this)">
+            <div class="text-content">
+                <h2>South America Forest Cover Map</h2>
+                <p><strong>Description:</strong> A color-coded map representing percentage tree cover in South America, but with an inverted color scale that misleads interpretation.</p>
+                <p><strong>Source:</strong> <a href="https://x.com/PythonMaps/status/1777375083427770782" target="_blank">Tweet Source</a></p>
+                <p><strong>Data Issues:</strong>
+                    <ul>
+                        <li><b>Flipped color scale misleads viewers.</b></li>
+                        <p>This visualization reverses standard mapping conventions by using light green to represent dense forests and dark green to indicate sparse tree cover. Typically, darker shades are used to show higher forest density, while lighter shades represent deforested or sparse areas. This inversion creates instant misinterpretation, making heavily forested regions like the Amazon appear less tree-covered than they actually are.</p>
+                        <li><b>No numerical breakdown for specific regions.</b></li>
+                        <p>The map represents a continuous colour gradient, but it does not include precise numerical values for different areas, making it difficult to determine exact forest coverage in specific areas. We are left guessing based on the colours alone.</p>
+                        <li><b>Key ecological regions could be highlighted for further clarity.</b></li>
+                        <p>While the map represents forest coverage, it does not explicitly label or highlight key zones such as <b>The Amazon Rainforest, The Andes Mountains and Patagonia</b> Labelling these regions would provide greater context to the viewer without the need to reference other material.</p>
+                    </ul>
+                </p>
+                <p><strong>Idiom Issues:</strong>
+                    <ul>
+                        <li><b>Confusing color choices contradict mapping standards.</b></li>
+                        <p>Most forestry maps follow a universal convention where dark green represents dense forest coverage and light green represents sparse vegetation. The inversion from the convention causes misinterpretation.</p>
+                        <li><b>Thin boundary lines interfere with legend interpretation.</b></li>
+                        <p>The thin white boundary line blends with the colour gradient used, making it hard to distinguish national boundaries. A clustering of these lines will also potentially overpower the data, leading to a misrepresentation.</p>
+                        <li><b>Lacks direct data labels for forest percentages.</b></li>
+                        <p>Viewers are left to estimate coverage levels based purely on colour, which is less precise. </p>
+                    </ul>
+                </p>
+                <p><strong>Suggestions for Improvement:</strong>
+                    <ul>
+                        <li>Flip the color scale to match standard mapping conventions, where dark green = high density, light green = low density</li>
+                        <li>Use a choropleth map with labeled percentages for each country.</li>
+                        <li>Adjust the boundary lines to contrast with the colour gradient for increased clarity.</li>
+                        <li>Label and highlight key ecological regions such as the Amazon, Andes and Patagonia to differentiate different types of natural areas.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Modal for expanding images -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modalImg">
+    </div>
+    
+    <script>
+        function openModal(img) {
+            document.getElementById("modalImg").src = img.src;
+            document.getElementById("imageModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
